@@ -440,6 +440,10 @@ section .d-flex > div {
     border: none;
     margin-bottom: 0.5rem;
   }
+  
+body {
+  overflow-x: hidden;
+}
 
 
 

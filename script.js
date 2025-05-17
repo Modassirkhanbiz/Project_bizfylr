@@ -63,22 +63,20 @@ document.addEventListener("DOMContentLoaded", () => {
       observer.observe(counter);
     });
   }
-});
-<script>
-  // Close button functionality
-  document.addEventListener('DOMContentLoaded', function () {
-    const closeBtn = document.querySelector('#mainNavbar .btn-close');
-    const navbarCollapse = document.getElementById('mainNavbar');
 
-    if (closeBtn && navbarCollapse) {
-      closeBtn.addEventListener('click', () => {
-        // Bootstrap collapse toggle
-        let collapseInstance = bootstrap.Collapse.getInstance(navbarCollapse);
-        if (!collapseInstance) {
-          collapseInstance = new bootstrap.Collapse(navbarCollapse);
-        }
-        collapseInstance.hide();
-      });
-    }
-  });
-</script>
+  // ----- Navbar Close Button -----
+  const closeBtn = document.querySelector('#mainNavbar .btn-close');
+  const navbarCollapse = document.getElementById('mainNavbar');
+
+  if (closeBtn && navbarCollapse) {
+    closeBtn.addEventListener('click', () => {
+      let collapseInstance = bootstrap.Collapse.getInstance(navbarCollapse);
+      if (!collapseInstance) {
+        collapseInstance = new bootstrap.Collapse(navbarCollapse, {
+          toggle: false,
+        });
+      }
+      collapseInstance.hide();
+    });
+  }
+});

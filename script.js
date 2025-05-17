@@ -64,3 +64,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+<script>
+  // Close button functionality
+  document.addEventListener('DOMContentLoaded', function () {
+    const closeBtn = document.querySelector('#mainNavbar .btn-close');
+    const navbarCollapse = document.getElementById('mainNavbar');
+
+    if (closeBtn && navbarCollapse) {
+      closeBtn.addEventListener('click', () => {
+        // Bootstrap collapse toggle
+        let collapseInstance = bootstrap.Collapse.getInstance(navbarCollapse);
+        if (!collapseInstance) {
+          collapseInstance = new bootstrap.Collapse(navbarCollapse);
+        }
+        collapseInstance.hide();
+      });
+    }
+  });
+</script>

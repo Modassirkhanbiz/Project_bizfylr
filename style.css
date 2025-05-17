@@ -445,6 +445,103 @@ body {
   overflow-x: hidden;
 }
 
+/* === Global: White Burger Icon === */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* === Mobile Fullscreen Panel with Slide-in === */
+@media (max-width: 991px) {
+  #mainNavbar {
+    position: fixed;
+    top: 0;
+    left: 100vw; /* Start off-screen */
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 1050;
+    padding-top: 80px;
+    text-align: center;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+  }
+
+  #mainNavbar.show {
+    left: 0;
+  }
+
+  /* Keep block to allow slide animation */
+  .navbar-collapse.collapse:not(.show) {
+    display: block !important;
+  }
+
+  /* Nav links */
+  .navbar-nav .nav-link {
+    color: #fff !important;
+    font-size: 1.2rem;
+  }
+
+  /* Center dropdown under Service */
+  #mainNavbar .dropdown-menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    margin-top: 0.5rem;
+    min-width: 200px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    background-color: #111 !important;
+    z-index: 1100;
+  }
+
+  #mainNavbar .dropdown-menu > li > a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff !important;
+    padding: 0.5rem 1rem;
+  }
+
+  #mainNavbar .dropdown-menu > li > a:hover {
+    background-color: #198754 !important;
+    color: #fff !important;
+  }
+
+  /* Generic dropdown styling fallback */
+  .dropdown-menu {
+    border-radius: 0;
+  }
+
+  .dropdown-menu a {
+    color: #fffbfb !important;
+  }
+
+  .dropdown-menu a:hover {
+    background-color: #f1f1f1;
+  }
+
+  /* Book a Consultation button */
+  .btn-success {
+    background-color: #28a745 !important;
+    color: #fff !important;
+    border: none;
+  }
+
+  /* Close button in white */
+  .btn-close-white {
+    filter: invert(1);
+  }
+
+  /* Toggler button cleanup */
+  .navbar-toggler {
+    border-color: transparent;
+  }
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
 
 
 
